@@ -1,17 +1,21 @@
-@keyframes spin {
+/* .tog-ved-stasjon:hover {
+  transform: translateX(50%);
+} */
+
+/* @keyframes move {
   from {
-    transform: rotate(0deg);
+    transform: translateX(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(100%);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .tog-ved-stasjon {
-    animation: spin infinite 20s linear paused;
+    animation: move infinite 20s linear paused;
   }
   .tog-ved-stasjon:hover {
     animation-play-state: running;
   }
-}
+} */

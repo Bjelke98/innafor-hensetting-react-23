@@ -12,6 +12,9 @@ import SpaceView from "./pages/Spaces/SpaceView";
 import ReservationView from "./pages/Reservations/ReservationView";
 import ReservationCreation from "./pages/Reservations/ReservationCreation";
 
+// Auth Kit
+import { AuthProvider } from 'react-auth-kit'
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -76,7 +79,16 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      {/* <AuthProvider authType = {'cookie'}
+                  authName={'_auth'}
+                  cookieDomain={window.location.hostname}
+                  cookieSecure={window.location.protocol === "https:"}> */}
+      <AuthProvider authType = {'cookie'}
+                authName={'_auth'}
+                cookieDomain={window.location.hostname}
+                cookieSecure={false}>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
